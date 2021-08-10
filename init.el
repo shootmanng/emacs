@@ -35,7 +35,7 @@
 
 ;;Theme
 
-(load-theme 'doom-palenight)
+(load-theme 'challenger-deep t)
 
 ;;load package repositories
 
