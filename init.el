@@ -6,7 +6,7 @@
  '(custom-safe-themes
    '("47db50ff66e35d3a440485357fb6acb767c100e135ccdf459060407f8baea7b2" default))
  '(package-selected-packages
-   '(sage-shell-mode pdf-tools treemacs helpful which-key use-package soothe-theme solarized-theme rainbow-delimiters ivy-rich doom-themes doom-modeline counsel)))
+   '(challenger-deep-theme sage-shell-mode pdf-tools treemacs helpful which-key use-package soothe-theme solarized-theme rainbow-delimiters ivy-rich doom-themes doom-modeline counsel)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -35,7 +35,7 @@
 
 ;;Theme
 
-(load-theme 'challenger-deep t)
+(load-theme 'doom-vibrant t)
 
 ;;load package repositories
 
@@ -48,6 +48,10 @@
 ;;Use esc as quit
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
+;;Use C-M-j to switch buffers
+
+(global-set-key (kbd "C-M-j") 'counsel-switch-buffer)
 
 ;;Check that the package list is full
 
@@ -83,6 +87,7 @@
   (ivy-mode 1))
 
 ;;doom modeline
+(use-package all-the-icons)
 
 (use-package doom-modeline
   :ensure t
