@@ -53,7 +53,7 @@
  '(objed-cursor-color "#CC9393")
  '(org-src-block-faces 'nil)
  '(package-selected-packages
-   '(langtool ivy-bibtex company-bibtex citar languagetool pandoc-mode ox-pandoc evil-nerd-commenter company-box company lsp-ivy lsp-ui python-mode dap-mode lsp-mode zotxt djvu nov math-preview org-noter-pdftools org-pdftools org-roam org-bullets org mastodon vterm ac-math annotate annotate-depth annotation arxiv-mode auctex auto-complete auto-complete-auctex all-the-icons doom-modeline-now-playing modus-themes kaolin-themes afternoon-theme visual-fill-column texfrag quarto-mode magit challenger-deep-theme sage-shell-mode pdf-tools treemacs helpful which-key use-package soothe-theme solarized-theme rainbow-delimiters ivy-rich doom-themes doom-modeline counsel))
+   '(geiser geiser-guile langtool ivy-bibtex company-bibtex citar languagetool pandoc-mode ox-pandoc evil-nerd-commenter company-box company lsp-ivy lsp-ui python-mode dap-mode lsp-mode zotxt djvu nov math-preview org-noter-pdftools org-pdftools org-roam org-bullets org mastodon vterm ac-math annotate annotate-depth annotation arxiv-mode auctex auto-complete auto-complete-auctex all-the-icons doom-modeline-now-playing modus-themes kaolin-themes afternoon-theme visual-fill-column texfrag quarto-mode magit challenger-deep-theme sage-shell-mode pdf-tools treemacs helpful which-key use-package soothe-theme solarized-theme rainbow-delimiters ivy-rich doom-themes doom-modeline counsel))
  '(pdf-view-midnight-colors (cons "#DCDCDC" "#3F3F3F"))
  '(rcirc-colors
    '(modus-themes-fg-red modus-themes-fg-green modus-themes-fg-blue modus-themes-fg-yellow modus-themes-fg-magenta modus-themes-fg-cyan modus-themes-fg-red-warmer modus-themes-fg-green-warmer modus-themes-fg-blue-warmer modus-themes-fg-yellow-warmer modus-themes-fg-magenta-warmer modus-themes-fg-cyan-warmer modus-themes-fg-red-cooler modus-themes-fg-green-cooler modus-themes-fg-blue-cooler modus-themes-fg-yellow-cooler modus-themes-fg-magenta-cooler modus-themes-fg-cyan-cooler modus-themes-fg-red-faint modus-themes-fg-green-faint modus-themes-fg-blue-faint modus-themes-fg-yellow-faint modus-themes-fg-magenta-faint modus-themes-fg-cyan-faint modus-themes-fg-red-intense modus-themes-fg-green-intense modus-themes-fg-blue-intense modus-themes-fg-yellow-intense modus-themes-fg-magenta-intense modus-themes-fg-cyan-intense))
@@ -117,7 +117,8 @@
 (require 'package)
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-;			 ("org" . "https://orgmode.org/elpa/")
+					;("org" . "https://orgmode.org/elpa/")
+			 ("nongnu" . "https://elpa.nongnu.org/nongnu/")
 			 ("gnu" . "https://elpa.gnu.org/packages/")))
 
 (setq package-selected-packages '(org)) ; Add other packages you use
