@@ -450,10 +450,23 @@
  'org-babel-load-languages
  '((python . t) ; this line enables Python execution
    (latex . t) ; latex
+   (C . t) ; c,c++,D
    ;; Add other languages here, if needed
    ))
 (setq org-babel-python-command "python3") ; Set your Python interpreter command
 ;; Customize other Python-related options as needed
+
+;; function that formats org src blocks from https://emacs.stackexchange.com/a/64785/42521
+
+(defun my-indent-org-block-automatically ()
+  (interactive)
+  (when (org-in-src-block-p)
+   (org-edit-special)
+   (indent-region (point-min) (point-max))
+   (org-edit-src-exit)))
+
+(define-key org-mode-map
+  (kbd "C-i") #'my-indent-org-block-automatically)
 
 
 (use-package lsp-ivy)
@@ -483,3 +496,11 @@
 
 (use-package evil-nerd-commenter
   :bind ("M-/" . evilnc-comment-or-uncomment-lines))
+
+;; for code blocks, taken from https://stackoverflow.com/a/60396939
+(setq org-latex-listings 'minted
+      org-latex-packages-alist '(("" "minted"))
+      org-latex-pdf-process
+      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
