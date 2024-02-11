@@ -457,17 +457,19 @@
 ;; Customize other Python-related options as needed
 
 ;; function that formats org src blocks from https://emacs.stackexchange.com/a/64785/42521
+;; edited by chatGPT so it doesnt break TAB functionality
 
 (defun my-indent-org-block-automatically ()
+  "Indent the code block automatically if inside an `org-src-block`."
   (interactive)
-  (when (org-in-src-block-p)
-   (org-edit-special)
-   (indent-region (point-min) (point-max))
-   (org-edit-src-exit)))
+  (if (org-in-src-block-p)
+      (save-excursion
+        (org-edit-special)
+        (indent-region (point-min) (point-max))
+        (org-edit-src-exit))
+    (call-interactively #'org-cycle)))
 
-(define-key org-mode-map
-  (kbd "C-i") #'my-indent-org-block-automatically)
-
+(define-key org-mode-map (kbd "TAB") #'my-indent-org-block-automatically)
 
 (use-package lsp-ivy)
 
